@@ -1,5 +1,4 @@
-module github.com/DejanGegic/redis-gos
-
+module github.com/DejanGegic/RedisGo
 go 1.20
 
 require github.com/go-redis/redis v6.15.9+incompatible
