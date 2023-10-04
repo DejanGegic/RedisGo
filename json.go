@@ -57,3 +57,11 @@ func (r RedisInstance) ReadJSONFromRedis(key string) (string, error) {
 	}
 	return val, nil
 }
+
+func (r RedisInstance) SetTTL(key string, timeFrame time.Duration) error {
+	err := r.Expire(key, timeFrame).Err()
+	if err != nil {
+		return err
+	}
+	return nil
+}
