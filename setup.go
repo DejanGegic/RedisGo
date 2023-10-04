@@ -6,13 +6,11 @@ import (
 	"github.com/go-redis/redis"
 )
 
-func ConnectToRedisClient(db int) RedisInstance {
-
-	host := "localhost"
+func ConnectToRedisClient(host string, port string, password string, db int) RedisInstance {
 	log.Println("Connecting to redis at", host)
 	client := redis.NewClient(&redis.Options{
-		Addr:     host + ":6379",
-		Password: "",
+		Addr:     host + ":" + port,
+		Password: password,
 		DB:       db,
 	})
 

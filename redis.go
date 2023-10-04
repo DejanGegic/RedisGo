@@ -11,6 +11,6 @@ type RedisInstance struct {
 }
 
 func (r RedisInstance) IncrementValue(key int) error {
-	err := r.Incr(strconv.Itoa(key))
-	return err.Err()
+	err := r.Incr(strconv.Itoa(key)).Err()
+	return err
 }

@@ -8,7 +8,7 @@ import (
 	"github.com/DejanGegic/RedisGo"
 )
 
-var R = RedisGo.ConnectToRedisClient(2)
+var R = RedisGo.ConnectToRedisClient("localhost", "6379", "", 0)
 
 func TestWriteToRedisHash(t *testing.T) {
 
